@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::group(['namespace' => 'App\Http\Controllers\Web'], function () {
-
     Route::get('/', 'HomeController@index')->name('home');
+
+    Route::get('product/{category}/{subcategory1?}/{subcategory2?}', 'ProductController@index')->name('product.index');
+    Route::get('details/{product}', 'ProductController@show')->name('product.show');
 });

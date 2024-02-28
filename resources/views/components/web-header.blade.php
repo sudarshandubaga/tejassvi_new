@@ -43,7 +43,24 @@
         <div class="container">
             <ul class="main-navbar">
                 <li><a href="">Home</a></li>
-                <li><a href="">Furniture</a></li>
+                <li class="has-dropdown">
+                    <a href="">Furniture <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        @for($i = 1; $i <= 4; $i++)
+                        <li>
+                            <a href="{{ route('product.index', ['category' => 'category-' . $i]) }}">Category {{ $i }}</a>
+
+                            <ul>
+                                @for($j = 1; $j <= 5; $j++)
+                                <li>
+                                    <a href="">Sub Category {{ $i }}.{{ $j }}</a>
+                                </li>
+                                @endfor
+                            </ul>
+                        </li>
+                        @endfor
+                    </ul>
+                </li>
                 <li><a href="">Decor</a></li>
                 <li><a href="">Exclusive</a></li>
                 <li><a href="">Wholesale</a></li>
