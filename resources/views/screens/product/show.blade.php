@@ -4,28 +4,215 @@
 <section>
     <div class="container">
         <div class="main">
-            <div class="row d-flex">
+            <div class="row d-flex align aitems-center">
                 <div class="col-md-6 col-sm-12">
-                    <div class="image-div mb-3">
-                        <img style="width: 450px; height:300px" src="https://gardenaura.in/cdn/shop/products/fgfinal3_1200x.jpg?v=1668757573" alt="">
+                    <!-- Slider Start -->
+                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                            </div>
+                        </div>
                     </div>
-                    <div class="hover-zoom mb-3">Hover to Zoom Image</div>
-                    <div class="extraImgs d-flex">
-                        @for ($i = 1; $i <= 6; $i++) <div class="extraImgs d-flex">
-                            <img style="width: 100px; height:70px" src="https://gardenaura.in/cdn/shop/products/fgfinal3_1200x.jpg?v=1668757573" alt="">
+                    <div thumbsSlider="" class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                            </div>
+                        </div>
+
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
-                    @endfor
+                    <!-- Slider End -->
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="titleDiv mb-4">
+                        <h1>ACCESSIBLE COMPACT TWO DOOR NATURAL FINISH ALMIRAH</h1>
+                    </div>
+                    <hr>
+                    <div class="row d-flex mb-4 mt-4 align-items-center">
+                        <div class="col">
+                            <div class=" d-flex">
+                                <div class="">
+                                    <i class="bi bi-star"></i>
+                                    <i class="bi bi-star"></i>
+                                    <i class="bi bi-star"></i>
+                                    <i class="bi bi-star"></i>
+                                    <i class="bi bi-star"></i>
+                                </div>
+                                <div class=" ms-3 star-rating">4.8/2 Rating</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-bulk-dark btn-block">Bulk Enquiry</button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row mb-3">
+                        <div class="col f-16">Wishlist</div>
+                        <div class="col f-16">
+                            <a class="addWishList" href="#">
+                                <i class="bi bi-eye-fill"></i>
+                                Add to Wish list
+                            </a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-3 f-16">2 Reviews | Viewed: 2.6K | Selfies</div>
+                    <hr>
+                    <div class="mb-3 f-16"> <span style="font-size: 28px;">Rs 19,182</span> (Exclusive GST)</div>
+                    <hr>
+                    <div class="mb-3 f-16"> EMI starts at Rs 511.78/month
+                        <a class="f-16 viewPlan" href="#">View Plans</a>
+                    </div>
+                    <hr>
+                    <div class="row mt-5">
+                        <div class="col">
+                            <button class="btn btn-clean-dark btn-block">
+                                <i class="bi bi-cart-plus"></i>
+                                ADD TO CART</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-clean-yellow btn-block">
+                                <i class="bi bi-cart3"></i>
+                                BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4 mt-4">
+                    <div class="col-sm-6">
+                        <div class="info-box clearfix">
+                            <hr>
+                            <div><strong class="f-16" style="font-weight: bold;">SPECIFICATION</strong></div>
+                            <hr>
+                        </div>
+
+                        <div class="info-box pro_specification clearfix mt-5">
+                            <table class="table table-striped table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th width="30%">Style</th>
+                                        <td>Contemporary</td>
+                                    </tr>
+                                    <tr>
+                                        <th width="30%">Suitable Room</th>
+                                        <td>Bed Room</td>
+                                    </tr>
+                                    <tr>
+                                        <th width="30%">Ara Natural finish</th>
+                                        <td>Natural finish</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Primary Material</th>
+                                        <td>Sheesham (Rosewood)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="info-box clearfix">
+                            <hr>
+                            <div><strong class="f-16" style="font-weight: bold;">GENERAL INFORMATION</strong></div>
+                            <hr>
+                        </div>
+                        <div class="table-responsive mt-5" style="margin: 7px 0 0px 0;">
+                            <table class="table table-striped table-bordered" style="margin-bottom: 5px">
+                                <tbody>
+                                    <tr>
+                                        <th>Code</th>
+                                        <td>OMF-AL-1008</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Availability</th>
+                                        <td>
+                                            <span><i class="fa fa-check-square-o"></i> In stock</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center">
+                            <img src="https://www.omyfurniture.com/assets/images/ready-to-ship.png" alt="Stock Status" style="max-width: 100%;">
+                        </div> <input type="hidden" name="primary_color" id="primary_color" value="">
+                        <input type="hidden" name="secondary_color" id="secondary_color" value=""><!-- === info-box === -->
+                        <script type="text/javascript">
+                            function add_wood(name, price) {
+
+                                $("#wood_name_val").val(name);
+                                $("#wood_price_val").val(price);
+
+                                $("#wood_name").html(name);
+                                $("#wood_price").html(price);
+
+                            }
+                        </script>
+
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-12"></div>
         </div>
-    </div>
 
 
-    <div class="py-5">
-        <h1 class="home-title">Category 2</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente fugit deleniti id nemo, a cum modi molestiae, sed nisi optio assumenda molestias est temporibus earum fuga alias veritatis incidunt adipisci in quibusdam! Sequi quos ea ratione, magnam pariatur ut quibusdam, beatae perferendis voluptas, tempora laboriosam harum error saepe laborum necessitatibus iure! Distinctio provident sapiente ullam culpa error quam suscipit dolorem iure similique et nesciunt eius quaerat reprehenderit, ratione, ad odit modi atque reiciendis. Repudiandae voluptatibus cupiditate expedita dolores molestias soluta itaque, aut ad atque ab dignissimos, sed et. Eveniet quos, nihil facere inventore amet eum, eligendi non quaerat sint dolores laudantium repudiandae! Exercitationem, numquam blanditiis sint voluptatem, aspernatur ratione molestiae maiores reprehenderit nihil distinctio debitis consequatur officia illo, non culpa quos quisquam a autem laudantium? Porro molestias temporibus ipsa dolorum, iusto recusandae ex saepe? Dicta sed ut qui nostrum architecto impedit ratione voluptatem quo pariatur nobis, dolorum, natus praesentium perferendis. Cupiditate deleniti assumenda quisquam accusantium omnis dolor dolorum esse, fuga voluptate nemo! Animi obcaecati itaque cupiditate minus assumenda aliquam accusantium culpa, magnam, nesciunt eligendi tenetur sapiente expedita recusandae quaerat cum repellat sunt hic! Odio, amet ex illo aliquam quas quasi est dolorem quia voluptatum similique eum dolores autem omnis porro.</p>
-    </div>
+        <div class="py-5">
+            <h1 class="home-title">Category 2</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente fugit deleniti id nemo, a cum modi molestiae, sed nisi optio assumenda molestias est temporibus earum fuga alias veritatis incidunt adipisci in quibusdam! Sequi quos ea ratione, magnam pariatur ut quibusdam, beatae perferendis voluptas, tempora laboriosam harum error saepe laborum necessitatibus iure! Distinctio provident sapiente ullam culpa error quam suscipit dolorem iure similique et nesciunt eius quaerat reprehenderit, ratione, ad odit modi atque reiciendis. Repudiandae voluptatibus cupiditate expedita dolores molestias soluta itaque, aut ad atque ab dignissimos, sed et. Eveniet quos, nihil facere inventore amet eum, eligendi non quaerat sint dolores laudantium repudiandae! Exercitationem, numquam blanditiis sint voluptatem, aspernatur ratione molestiae maiores reprehenderit nihil distinctio debitis consequatur officia illo, non culpa quos quisquam a autem laudantium? Porro molestias temporibus ipsa dolorum, iusto recusandae ex saepe? Dicta sed ut qui nostrum architecto impedit ratione voluptatem quo pariatur nobis, dolorum, natus praesentium perferendis. Cupiditate deleniti assumenda quisquam accusantium omnis dolor dolorum esse, fuga voluptate nemo! Animi obcaecati itaque cupiditate minus assumenda aliquam accusantium culpa, magnam, nesciunt eligendi tenetur sapiente expedita recusandae quaerat cum repellat sunt hic! Odio, amet ex illo aliquam quas quasi est dolorem quia voluptatum similique eum dolores autem omnis porro.</p>
+        </div>
     </div>
 </section>
 @endsection

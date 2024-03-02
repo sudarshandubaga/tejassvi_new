@@ -16,6 +16,7 @@
     },
     "dependencies": {
         "jquery": "^3.7.1",
-        "lightslider": "^1.1.6"
+        "lightslider": "^1.1.6",
+        "swiper": "^11.0.7"
     }
 }
