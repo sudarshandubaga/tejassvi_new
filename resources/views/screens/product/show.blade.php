@@ -115,7 +115,7 @@
                     <hr>
                     <div class="mb-3 f-16">2 Reviews | Viewed: 2.6K | Selfies</div>
                     <hr>
-                    <div class="mb-3 f-16"> <span style="font-size: 28px;">Rs 19,182</span> (Exclusive GST)</div>
+                    <div class="mb-3 f-16"> <span style="font-size: 28px;">₹ 19,182</span> (Exclusive GST)</div>
                     <hr>
                     <div class="mb-3 f-16"> EMI starts at Rs 511.78/month
                         <a class="f-16 viewPlan" href="#">View Plans</a>
@@ -190,7 +190,7 @@
                         <div class="text-center">
                             <img src="https://www.omyfurniture.com/assets/images/ready-to-ship.png" alt="Stock Status" style="max-width: 100%;">
                         </div> <input type="hidden" name="primary_color" id="primary_color" value="">
-                        <input type="hidden" name="secondary_color" id="secondary_color" value=""><!-- === info-box === -->
+                        <input type="hidden" name="secondary_color" id="secondary_color" value="">
                         <script type="text/javascript">
                             function add_wood(name, price) {
 
@@ -202,17 +202,71 @@
 
                             }
                         </script>
-
                     </div>
+                    <!-- <div class="bottom-nav mx-5 d-flex">
+                        <ul class="d-flex">
+                            <li class="nav-item">Item Details</li>
+                            <li class="nav-item">Related Products</li>
+                            <li class="nav-item">Rating</li>
+                            <li class="nav-item">Ask Any Question</li>
+                        </ul>
+                    </div> -->
                 </div>
             </div>
-        </div>
+            <div class="related_products">
+                <!-- <div>
+                    <h4>Related products with free delivery on eligible orders
+                    </h4>
+                </div> -->
+                <!-- Swiper -->
+                <!-- <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        @for($i=1; $i<=5; $i++) <div class="swiper-slide">
+                            <div class="card" style="width: 18rem;">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZQUKdKtWwhS6JSpaPqD7blsRYsYoD9D_Ixg&usqp=CAU" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">bone inlay coffee table</h5>
+                                    <p class="card-text">best product of bone inlay furniture fpr yyour home</p>
+                                    <a href="#" class="btn btn-primary">Deal of the Day</a>
+                                </div>
+                            </div>
+                    </div>
+                    @endfor
+                </div> -->
+                <section class="todays-deals-section py-5 bg-whiite text-white">
+                    <div class="container">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h3 class="text-black">Related products with free delivery on eligible orders</h3>
+                            <a href="#" class="ms-3 btn btn-outline-primary btn-sm">
+                                See all deals <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </div>
 
-
-        <div class="py-5">
-            <h1 class="home-title">Category 2</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente fugit deleniti id nemo, a cum modi molestiae, sed nisi optio assumenda molestias est temporibus earum fuga alias veritatis incidunt adipisci in quibusdam! Sequi quos ea ratione, magnam pariatur ut quibusdam, beatae perferendis voluptas, tempora laboriosam harum error saepe laborum necessitatibus iure! Distinctio provident sapiente ullam culpa error quam suscipit dolorem iure similique et nesciunt eius quaerat reprehenderit, ratione, ad odit modi atque reiciendis. Repudiandae voluptatibus cupiditate expedita dolores molestias soluta itaque, aut ad atque ab dignissimos, sed et. Eveniet quos, nihil facere inventore amet eum, eligendi non quaerat sint dolores laudantium repudiandae! Exercitationem, numquam blanditiis sint voluptatem, aspernatur ratione molestiae maiores reprehenderit nihil distinctio debitis consequatur officia illo, non culpa quos quisquam a autem laudantium? Porro molestias temporibus ipsa dolorum, iusto recusandae ex saepe? Dicta sed ut qui nostrum architecto impedit ratione voluptatem quo pariatur nobis, dolorum, natus praesentium perferendis. Cupiditate deleniti assumenda quisquam accusantium omnis dolor dolorum esse, fuga voluptate nemo! Animi obcaecati itaque cupiditate minus assumenda aliquam accusantium culpa, magnam, nesciunt eligendi tenetur sapiente expedita recusandae quaerat cum repellat sunt hic! Odio, amet ex illo aliquam quas quasi est dolorem quia voluptatum similique eum dolores autem omnis porro.</p>
-        </div>
-    </div>
+                        <div class="light-slider">
+                            @for ($i = 1; $i <= 10; $i++) <div class="bg-white rounded overflow-hidden">
+                                <img style="height:160px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZQUKdKtWwhS6JSpaPqD7blsRYsYoD9D_Ixg&usqp=CAU" alt="" class="card-img-top rounded-bottom">
+                                <div class="p-2">
+                                    <small class="d-inline-block bg-danger text-white px-2 py-1 fw-bold rounded mb-1">Deal of the Day
+                                    </small>
+                                    <h5 class="text-black">
+                                        bone inlay coffee table
+                                    </h5>
+                                    <span style="font-size: 20px;" class="text-danger">Rs. 1660/-</span><br>
+                                    <p class="text-black">List: <strike>Rs. 2530</strike> (20% off)</p>
+                                </div>
+                        </div>
+                        @endfor
+                    </div>
+            </div>
+</section>
+<div class="swiper-pagination"></div>
+</div>
+</div>
+</div>
+<div class="py-5">
+    <h1 class="home-title">Category 2</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente fugit deleniti id nemo, a cum modi molestiae, sed nisi optio assumenda molestias est temporibus earum fuga alias veritatis incidunt adipisci in quibusdam! Sequi quos ea ratione, magnam pariatur ut quibusdam, beatae perferendis voluptas, tempora laboriosam harum error saepe laborum necessitatibus iure! Distinctio provident sapiente ullam culpa error quam suscipit dolorem iure similique et nesciunt eius quaerat reprehenderit, ratione, ad odit modi atque reiciendis. Repudiandae voluptatibus cupiditate expedita dolores molestias soluta itaque, aut ad atque ab dignissimos, sed et. Eveniet quos, nihil facere inventore amet eum, eligendi non quaerat sint dolores laudantium repudiandae! Exercitationem, numquam blanditiis sint voluptatem, aspernatur ratione molestiae maiores reprehenderit nihil distinctio debitis consequatur officia illo, non culpa quos quisquam a autem laudantium? Porro molestias temporibus ipsa dolorum, iusto recusandae ex saepe? Dicta sed ut qui nostrum architecto impedit ratione voluptatem quo pariatur nobis, dolorum, natus praesentium perferendis. Cupiditate deleniti assumenda quisquam accusantium omnis dolor dolorum esse, fuga voluptate nemo! Animi obcaecati itaque cupiditate minus assumenda aliquam accusantium culpa, magnam, nesciunt eligendi tenetur sapiente expedita recusandae quaerat cum repellat sunt hic! Odio, amet ex illo aliquam quas quasi est dolorem quia voluptatum similique eum dolores autem omnis porro.</p>
+</div>
+</div>
 </section>
 @endsection
