@@ -28,7 +28,10 @@
                         <div class="py-2">
                             <img style="width: 80px; height:80px ; border-radius: 10px" src="https://m.media-amazon.com/images/I/71t2oz2jLbL.jpg" alt="">
                         </div>
-                        <div style="max-width: 275px;" class="ms-4 f-16">Waterfall Bone Inlay Coffee Table</div><br>
+                        <div class="ms-4 f-16">
+                            <span>Waterfall Bone Inlay Coffee Table</span>
+                            <p class="text-primary">white</p>
+                        </div>
 
                     </div>
                     <div class="left d-flex">
@@ -55,7 +58,12 @@
                         <div class="py-2">
                             <img style="width: 80px; height:80px ; border-radius: 10px" src="https://homesofrajasthan.com/wp-content/uploads/2023/10/Bone-Inlay-Nesting-Coffee-Table-scaled_20231010_164219252.jpg" alt="">
                         </div>
-                        <div style="max-width: 275px;" class="ms-4 f-16">Waterfall Bone Inlay Coffee Table</div><br>
+
+                        <div class="ms-4 f-16">
+                            <span>Waterfall Bone Inlay Coffee Table</span>
+                            <p class="text-primary">Blue</p>
+                        </div>
+
 
                     </div>
                     <div class="left d-flex">
@@ -82,7 +90,10 @@
                         <div class="py-2">
                             <img style="width: 80px; height:80px ; border-radius: 10px" src="https://cpimg.tistatic.com/07965675/b/4/Hexagon-Bone-Inlay-Coffee-Table.jpg" alt="">
                         </div>
-                        <div style="max-width: 275px;" class="ms-4 f-16">Waterfall Bone Inlay Coffee Table</div><br>
+                        <div class="ms-4 f-16">
+                            <span>Waterfall Bone Inlay Coffee Table</span>
+                            <p class="text-primary">Grey</p>
+                        </div>
 
                     </div>
                     <div class="left d-flex">
