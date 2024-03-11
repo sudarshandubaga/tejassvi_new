@@ -20,4 +20,5 @@ Route::group(['namespace' => 'App\Http\Controllers\Web'], function () {
 
     Route::get('product/{category}/{subcategory1?}/{subcategory2?}', 'ProductController@index')->name('product.index');
     Route::get('details/{product}', 'ProductController@show')->name('product.show');
+    Route::get('cart', 'CartController@index')->name('cart.index');
 });
