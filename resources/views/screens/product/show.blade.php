@@ -151,7 +151,7 @@
                                     </tr>
                                     <tr>
                                         <th width="30%">Suitable Room</th>
-                                        <td>Bed Room</td>
+                                        <td>Living Room</td>
                                     </tr>
                                     <tr>
                                         <th width="30%">Ara Natural finish</th>
@@ -159,7 +159,7 @@
                                     </tr>
                                     <tr>
                                         <th>Primary Material</th>
-                                        <td>Sheesham (Rosewood)</td>
+                                        <td>Camel Bone</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -176,7 +176,7 @@
                                 <tbody>
                                     <tr>
                                         <th>Code</th>
-                                        <td>OMF-AL-1008</td>
+                                        <td>TEJASSVI10</td>
                                     </tr>
                                     <tr>
                                         <th>Availability</th>
@@ -203,36 +203,9 @@
                             }
                         </script>
                     </div>
-                    <!-- <div class="bottom-nav mx-5 d-flex">
-                        <ul class="d-flex">
-                            <li class="nav-item">Item Details</li>
-                            <li class="nav-item">Related Products</li>
-                            <li class="nav-item">Rating</li>
-                            <li class="nav-item">Ask Any Question</li>
-                        </ul>
-                    </div> -->
                 </div>
             </div>
             <div class="related_products">
-                <!-- <div>
-                    <h4>Related products with free delivery on eligible orders
-                    </h4>
-                </div> -->
-                <!-- Swiper -->
-                <!-- <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        @for($i=1; $i<=5; $i++) <div class="swiper-slide">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZQUKdKtWwhS6JSpaPqD7blsRYsYoD9D_Ixg&usqp=CAU" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">bone inlay coffee table</h5>
-                                    <p class="card-text">best product of bone inlay furniture fpr yyour home</p>
-                                    <a href="#" class="btn btn-primary">Deal of the Day</a>
-                                </div>
-                            </div>
-                    </div>
-                    @endfor
-                </div> -->
                 <section class="todays-deals-section py-5 bg-whiite text-white">
                     <div class="container">
                         <div class="d-flex align-items-center justify-content-between mb-3">
@@ -246,12 +219,17 @@
                             @for ($i = 1; $i <= 10; $i++) <div class="bg-white rounded overflow-hidden">
                                 <img style="height:160px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZQUKdKtWwhS6JSpaPqD7blsRYsYoD9D_Ixg&usqp=CAU" alt="" class="card-img-top rounded-bottom">
                                 <div class="p-2">
-                                    <small class="d-inline-block bg-danger text-white px-2 py-1 fw-bold rounded mb-1">Deal of the Day
-                                    </small>
-                                    <h5 class="text-black">
-                                        bone inlay coffee table
+                                    <h5 style="color: #007185;">
+                                        bone inlay coffee table in stripe black & white pattern
                                     </h5>
-                                    <span style="font-size: 20px;" class="text-danger">Rs. 1660/-</span><br>
+                                    <i class="bi bi-star-fill text-primary"></i>
+                                    <i class="bi bi-star-fill text-primary"></i>
+                                    <i class="bi bi-star-fill text-primary"></i>
+                                    <i class="bi bi-star-fill text-primary"></i>
+                                    <i class="bi bi-star-half text-primary"></i>
+                                    <small style="background-color: #B12704;" class="d-inline-block text-white px-3 py-1 fw-bold rounded mb-1 ">Free Delivery
+                                    </small> <br>
+                                    <span style="font-size: 20px; color:#B12704">Rs. 1660/-</span><br>
                                     <p class="text-black">List: <strike>Rs. 2530</strike> (20% off)</p>
                                 </div>
                         </div>

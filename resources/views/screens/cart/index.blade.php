@@ -26,7 +26,7 @@
                             </div>
                         </div>
                         <div class="py-2">
-                            <img style="width: 80px; height:80px ; border-radius: 10px" src="https://m.media-amazon.com/images/I/71t2oz2jLbL.jpg" alt="">
+                            <img style="width: 80px; height:80px ; border-radius: 10px;" src="https://m.media-amazon.com/images/I/71t2oz2jLbL.jpg" alt="">
                         </div>
                         <div class="ms-4 f-16">
                             <span>Waterfall Bone Inlay Coffee Table</span>
@@ -44,7 +44,7 @@
                         </div>
                         <div class="mx-5 f-16">Rs. 19500/-</div>
                         <div>
-                            <i class="bi bi-trash text-danger f-16"></i>
+                            <i class="bi bi-trash text-primary f-16"></i>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                         </div>
                         <div class="mx-5 f-16">Rs. 19500/-</div>
                         <div>
-                            <i class="bi bi-trash text-danger f-16"></i>
+                            <i class="bi bi-trash text-primary f-16"></i>
                         </div>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
                         </div>
                         <div class="mx-5 f-16">Rs. 49500/-</div>
                         <div>
-                            <i class="bi bi-trash text-danger f-16"></i>
+                            <i class="bi bi-trash text-primary f-16"></i>
                         </div>
                     </div>
                 </div>
@@ -129,10 +129,12 @@
                         <p>Shipping:</p>
                         <p>Free Delivery</p>
                     </div>
+                    <hr>
                     <div class="paymentDetails">
-                        <p class="f-16">Total:</p>
-                        <p class="text-primary f-16"> ₹ 90256</p>
+                        <p style="font-weight: bold;" class="f-16">Total:</p>
+                        <p style="font-weight: bold;" class="text-primary f-16"> ₹ 90256</p>
                     </div>
+
                     <div class="paymentDetails">
                         <button>PROCEED TO CHECKOUT</button>
                     </div>
