@@ -1,0 +1,94 @@
+@media screen and (max-width: 1500px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .slider-section {
+        img {
+            height: 200px !important;
+        }
+    }
+
+    .main-header {
+        position: static;
+
+        header {
+            .header-part {
+                flex-direction: column;
+                align-items: normal;
+
+                & > * {
+                    text-align: center;
+                }
+
+                .search-bar {
+                    margin: 0;
+                }
+            }
+        }
+
+        .right-icons {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: -100%;
+            background-color: $dark;
+            width: calc(100% - 70px);
+            z-index: 9999;
+            transition: all ease 500ms;
+            overflow: auto;
+
+            &.show-nav {
+                left: 0;
+            }
+
+            .main-navbar {
+                display: block;
+
+                & > li {
+                    a {
+                        padding: 10px 15px;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                    ul {
+                        display: block;
+                        position: static;
+                        transform: translateX(0);
+                    }
+
+                    &:hover {
+                        ul {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .filter-options {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        background-color: $white;
+        z-index: 9999;
+        width: 100%;
+        transition: all ease 500ms;
+        overflow: auto;
+
+        &.show-filter {
+            left: 0;
+        }
+    }
+}

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -10,9 +12,33 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($cateogory, $subcategory = null, $subcategory2 = null)
+    public function index($category, $subcategory1 = null, $subcategory2 = null)
     {
-        return view('screens.product.index');
+        $query = Product::query();
+
+        if ($subcategory2) {
+            $category = Category::where('slug', $subcategory2)->firstOrFail();
+            $query->where('category_id', $category->id);
+        } else if ($subcategory1) {
+            $category = Category::where('slug', $subcategory1)->firstOrFail();
+            $query->where('category_id', $category->id)
+                ->orWhereHas('category', function ($q) use ($category) {
+                    return $q->where('category_id', $category->id);
+                });
+        } else {
+            $category = Category::where('slug', $category)->firstOrFail();
+            $query->where('category_id', $category->id)
+                ->orWhereHas('category', function ($q) use ($category) {
+                    return $q->where('category_id', $category->id)
+                        ->orWhereHas('parent', function ($q) use ($category) {
+                            return $q->where('category_id', $category->id);
+                        });
+                });
+        }
+
+        $products = $query->latest()->paginate(30);
+
+        return view('screens.product.index', compact('products', 'category'));
     }
 
     /**
@@ -34,32 +60,12 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Product $product)
     {
-        return view('screens.product.show');
-    }
+        $similarProducts = Product::where('category_id', $product->category_id)
+            ->whereNot('id', $product->id)
+            ->skip(0)->take(15)->get();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return view('screens.product.show', compact('product', 'similarProducts'));
     }
 }

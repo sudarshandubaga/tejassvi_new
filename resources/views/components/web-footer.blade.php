@@ -1,6 +1,6 @@
-<footer class="py-5 bg-dark text-white">
+<footer class="py-5 bg-white text-dark border-top">
     <div class="container">
-        <div class="row">
+        <div class="row g-3">
             <div class="col-lg-4">
                 <h3 class="home-title">About Tejassvi </h3>
                 <p>
@@ -25,7 +25,7 @@
             </div>
             <div class="col-lg-8">
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-4 col-6">
                         <h5 class="home-title mb-3">Connect With Us</h5>
 
                         <ul>
@@ -37,7 +37,7 @@
                             <li><a href=""><i class="bi bi-chevron-right"></i> Substainablity</a></li>
                         </ul>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4 col-6">
                         <h5 class="home-title mb-3">Information</h5>
 
                         <ul>
@@ -49,7 +49,7 @@
                             <li><a href=""><i class="bi bi-chevron-right"></i> Terms of Use</a></li>
                         </ul>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4 col-6">
                         <h5 class="home-title mb-3">Navigation</h5>
 
                         <ul>

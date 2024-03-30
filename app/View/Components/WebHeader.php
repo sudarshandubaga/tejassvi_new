@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Category;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +22,7 @@ class WebHeader extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.web-header');
+        $categories = Category::whereNull('category_id')->orderBy('name')->get();
+        return view('components.web-header', compact('categories'));
     }
 }

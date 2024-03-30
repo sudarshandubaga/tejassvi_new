@@ -38,70 +38,14 @@
         </div>
     </section>
 
-    {{-- Deals of The Day --}}
-    <section class="todays-deals-section py-5 bg-dark text-white">
-        <div class="container">
-            <div class="d-flex align-items-center justify-content-between mb-3">
-                <h3 class="home-title">Deals of The Day</h3>
-                <a href="#" class="ms-3 btn btn-outline-primary btn-sm">
-                    See all deals <i class="bi bi-chevron-right"></i>
-                </a>
-            </div>
-
-            <div class="light-slider">
-                @for ($i = 1; $i <= 10; $i++)
-                    <div class="bg-primary rounded overflow-hidden">
-                        <img src="{{ asset('images/product/10/medium_47.JPG') }}" alt=""
-                            class="card-img-top rounded-bottom">
-                        <div class="p-2">
-                            <small class="d-inline-block bg-danger text-white px-2 py-1 fw-bold rounded mb-1">upto 70%
-                                off</small>
-                            <h5>
-                                Product {{ $i }}
-                            </h5>
-                        </div>
-                    </div>
-                @endfor
-            </div>
-        </div>
-    </section>
-
-    {{-- Popular Products --}}
-    <section class="popular-products-sections py-5">
-        <div class="container">
-            <h3 class="home-title mb-3">Popular Products</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, tempora commodi incidunt deserunt eos iusto
-                unde voluptates natus, necessitatibus qui sed suscipit dolores molestias esse dolor eligendi. Laboriosam,
-                aspernatur animi.</p>
-
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="h-100">
-                        <img src="{{ asset('images/product/1/GALL_2.jpg') }}" alt=""
-                            class="w-100 h-100 object-fit-cover">
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="row g-3">
-                        @for ($i = 1; $i <= 6; $i++)
-                            <div class="col-sm-4">
-                                <x-product-box />
-                            </div>
-                        @endfor
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     {{-- Shipping Info --}}
     <section class="shipping-info-section bg-white py-5">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-center g-3 text-center">
                 <div class="col-xl-3 col-6">
                     <div class="row  align-items-center">
                         <div class="col-sm-4">
-                            <img src="{{ asset('images/Shipping.png') }}">
+                            <img src="{{ asset('images/worlwide-delivery.webp') }}">
                         </div>
 
                         <div class="col-sm-8">
@@ -119,7 +63,7 @@
                 <div class="col-xl-3 col-6">
                     <div class="row  align-items-center">
                         <div class="col-sm-4">
-                            <img src="{{ asset('images/Safety.png') }}">
+                            <img src="{{ asset('images/safe-checkout.webp') }}">
                         </div>
 
                         <div class="col-sm-8">
@@ -137,7 +81,7 @@
                 <div class="col-xl-3 col-6">
                     <div class="row  align-items-center">
                         <div class="col-sm-4">
-                            <img src="{{ asset('images/Happiness.png') }}">
+                            <img src="{{ asset('images/assured-happiness.webp') }}">
                         </div>
 
                         <div class="col-sm-8">
@@ -155,7 +99,7 @@
                 <div class="col-xl-3 col-6">
                     <div class="row  align-items-center">
                         <div class="col-sm-4">
-                            <img src="{{ asset('images/Gift.png') }}">
+                            <img src="{{ asset('images/gift-wrapping.webp') }}">
                         </div>
 
                         <div class="col-sm-8">
@@ -167,6 +111,77 @@
                                 <div>Perfectly wrapped gift for Loved one</div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {{-- Deals of The Day --}}
+    <section class="todays-deals-section py-5 bg-light text-dark border-top border-bottom">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h3 class="home-title">Deals of The Day</h3>
+                <a href="#" class="ms-3 btn btn-outline-primary btn-sm">
+                    See all deals <i class="bi bi-chevron-right"></i>
+                </a>
+            </div>
+
+            <div class="light-slider">
+                @for ($i = 1; $i <= 10; $i++)
+                    <div class="bg-white border rounded overflow-hidden h-100">
+                        <figure class="position-relative m-0">
+                            <img src="{{ asset('images/product/10/medium_47.JPG') }}" alt=""
+                                class="card-img-top rounded-bottom">
+
+                            <small class="d-inline-block bg-danger text-white px-2 py-1 fw-bold rounded mb-1 discount-pill">
+                                upto 70% off
+                            </small>
+                        </figure>
+                        <div class="p-2">
+                            <h5 class="m-0">
+                                @if ($i != 2)
+                                    Product {{ $i }}
+                                @else
+                                    Product {{ $i }}
+                                    Product {{ $i }}
+                                    Product {{ $i }}
+                                    Product {{ $i }}
+                                    Product {{ $i }}
+                                    Product {{ $i }}
+                                    Product {{ $i }}
+                                @endif
+                            </h5>
+                        </div>
+                    </div>
+                @endfor
+            </div>
+        </div>
+    </section>
+
+    {{-- Popular Products --}}
+    <section class="popular-products-sections py-5">
+        <div class="container">
+            <h3 class="home-title mb-3">Popular Products</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, tempora commodi incidunt deserunt eos iusto
+                unde voluptates natus, necessitatibus qui sed suscipit dolores molestias esse dolor eligendi. Laboriosam,
+                aspernatur animi.</p>
+
+            <div class="row g-3">
+                <div class="col-lg-5">
+                    <div class="h-100">
+                        <img src="{{ asset('images/product/1/GALL_2.jpg') }}" alt=""
+                            class="w-100 h-100 object-fit-cover">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row g-3">
+                        @foreach ($products as $product)
+                            <div class="col-sm-4 col-6">
+                                <x-product-box :product="$product" />
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -187,22 +202,22 @@
                         quasi.</p>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-sm-2">
+            <div class="row g-3">
+                <div class="col-sm-2 col-6">
                     <div class="rounded bg-primary overflow-hidden shadow">
                         <img src="{{ asset('images/product/medium_70.png') }}" alt="" class="img-fluid rounded">
                         <h4 class="text-center text-white mb-0 py-2">Furniture</h4>
                     </div>
                 </div>
 
-                <div class="col-sm-2">
+                <div class="col-sm-2 col-6">
                     <div class="rounded bg-primary overflow-hidden shadow">
                         <img src="{{ asset('images/product/medium_62.png') }}" alt="" class="img-fluid rounded">
                         <h4 class="text-center text-white mb-0 py-2">Decor</h4>
                     </div>
                 </div>
 
-                <div class="col-sm-2">
+                <div class="col-sm-2 col-6">
                     <div class="rounded bg-primary overflow-hidden shadow">
                         <img src="{{ asset('images/product/medium_23.jpg') }}" alt="" class="img-fluid rounded">
                         <h4 class="text-center text-white mb-0 py-2">Exlusive</h4>
@@ -211,14 +226,40 @@
             </div>
         </div>
     </section>
+    <section>
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="6000">
+                    <img src="https://www.shutterstock.com/image-vector/web-banner-christmas-sale-holiday-260nw-1556756354.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="6000">
+                    <img src="https://www.shutterstock.com/image-vector/web-banner-christmas-sale-holiday-260nw-1556756354.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="6000">
+                    <img src="https://www.shutterstock.com/image-vector/web-banner-christmas-sale-holiday-260nw-1556756354.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
 
     <section class="bg-white py-5">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row text-center g-3 align-items-center">
                 <div class="col-xl-3 col-6">
-                    <div class="row  align-items-center">
+                    <div class="row align-items-center">
                         <div class="col-sm-4">
-                            <img src="{{ asset('images/Organic_Sustainable.png') }}">
+                            <img src="{{ asset('images/organic-sustainable.webp') }}">
                         </div>
 
                         <div class="col-sm-8">
@@ -233,7 +274,7 @@
                 <div class="col-xl-3 col-6">
                     <div class="row  align-items-center">
                         <div class="col-sm-4">
-                            <img src="{{ asset('images/Aesthetic_Design.png') }}">
+                            <img src="{{ asset('images/aesthetic-design.webp') }}">
                         </div>
 
                         <div class="col-sm-8">
@@ -248,7 +289,7 @@
                 <div class="col-xl-3 col-6">
                     <div class="row  align-items-center">
                         <div class="col-sm-4">
-                            <img src="{{ asset('images/Unique_Trendy.png') }}">
+                            <img src="{{ asset('images/unique-and-trendy.webp') }}">
                         </div>
 
                         <div class="col-sm-8">
@@ -266,7 +307,7 @@
                 <div class="col-xl-3 col-6">
                     <div class="row  align-items-center">
                         <div class="col-sm-4">
-                            <img src="{{ asset('images/Affordable_Prices.png') }}">
+                            <img src="{{ asset('images/affordable-prices.webp') }}">
                         </div>
 
                         <div class="col-sm-8">
