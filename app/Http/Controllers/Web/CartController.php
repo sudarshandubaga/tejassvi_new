@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\ProductAttribute;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -23,12 +24,39 @@ class CartController extends Controller
         //
     }
 
+    protected function getCartItems()
+    {
+        $cartItems = session()->get('cartItems');
+
+        $products = [];
+        foreach ($cartItems as $id => $qty) {
+            $product = ProductAttribute::with('product')->find($id);
+            $products[] = $product;
+        }
+
+        return $products;
+    }
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'size_id' => 'required|numeric',
+            'qty'     => 'required|numeric'
+        ]);
+
+        $cartItems = session()->get('cartItems');
+
+        $cartItems[$request->size_id] = $request->qty;
+
+        session()->put(['cartItems' => $cartItems]);
+
+        return response()->json([
+            'message' => 'item added to cart.',
+            'products' => $this->getCartItems()
+        ]);
     }
 
     /**
@@ -60,6 +88,16 @@ class CartController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $cartItems = session()->get('cartItems');
+
+        if (isset($cartItems[$id]))
+            unset($cartItems[$id]);
+
+        session()->put(['cartItems' => $cartItems]);
+
+        return response()->json([
+            'message' => 'item removed from cart.',
+            'products' => $this->getCartItems()
+        ]);
     }
 }

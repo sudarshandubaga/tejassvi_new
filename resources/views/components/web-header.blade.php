@@ -53,7 +53,7 @@
     <nav class="bg-primary">
         <div class="container">
             <ul class="main-navbar">
-                <li><a href="">Home</a></li>
+                <li><a href="{{ route('home') }}">Home</a></li>
                 <x-category-menu :categories="$categories" />
                 {{-- <li><a href="">Decor</a></li>
                 <li><a href="">Exclusive</a></li> --}}

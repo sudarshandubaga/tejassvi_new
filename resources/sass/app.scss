@@ -256,13 +256,11 @@ footer {
     figure {
         display: block;
         margin: 0;
-        height: 230px;
-        background-color: #555;
+        background-color: $white;
 
         img {
-            object-fit: cover;
+            object-fit: contain;
             height: 100%;
-            width: 100%;
         }
     }
 
@@ -278,6 +276,12 @@ footer {
         right: 0;
         bottom: 0;
         left: 0;
+    }
+}
+
+.product-details {
+    img {
+        width: 100%;
     }
 }
 
@@ -388,11 +392,6 @@ footer {
     margin: 0px 15px;
     border: 1px solid rgb(211, 207, 207);
     border-radius: 10px;
-    align-items: center;
-}
-.left {
-    justify-content: space-around;
-    margin: 0px 10px;
     align-items: center;
 }
 .quantity-selector {

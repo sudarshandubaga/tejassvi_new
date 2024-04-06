@@ -13,90 +13,18 @@
                 </div>
                 <div class="row d-flex align aitems-center">
                     <div class="col-md-6 col-sm-12">
-                        <div class="demo">
+                        <div class="product-details">
                             <ul id="productImageSlider">
                                 @foreach ($product->product_images as $thumb => $full)
                                     <li data-thumb="{{ $thumb }}">
-                                        <a href="{{ $full }}" data-toggle="lightbox" data-gallery="product">
+                                        <a href="{{ $full }}" data-toggle="lightbox" data-gallery="product"
+                                            class="d-block lightbox">
                                             <img src="{{ $full }}" />
                                         </a>
                                     </li>
                                 @endforeach
                             </ul>
                         </div>
-                        <!-- Slider Start -->
-                        {{-- <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-                            </div>
-                        </div>
-                    </div>
-                    <div thumbsSlider="" class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-                            </div>
-                        </div>
-
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                    --}}
 
                         <!-- Slider End -->
                     </div>
@@ -142,19 +70,17 @@
                             </div> --}}
                         @if (!empty($product->prices))
                             <hr>
-                            <div class="d-flex align-items-center gap-2 size-group">
-                                <div>
+                            <div class="row align-items-center gap-3 size-group">
+                                <div class="col-2 col-lg-1">
                                     Size:
                                 </div>
-                                @foreach ($product->prices as $key => $price)
-                                    <label>
-                                        <input type="radio" name="size" value="{{ $price->id }}"
-                                            @if ($key === 0) checked @endif>
-                                        <div class="size">
-                                            {{ $price->size }}
-                                        </div>
-                                    </label>
-                                @endforeach
+                                <div class="col-5">
+                                    <select name="size_id" id="size_id" class="form-select">
+                                        @foreach ($product->prices as $key => $price)
+                                            <option value="{{ $price->size }}">{{ $price->size }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                             <hr>
                             <div class="d-flex gap-3 align-items-center mb-3">
@@ -176,14 +102,17 @@
                                     </div>
                                 </div>
                                 <div class="col d-grid">
-                                    <button class="btn btn-clean-dark btn-block">
+                                    <button class="btn btn-clean-dark btn-block add-to-cart">
                                         <i class="bi bi-cart-plus"></i>
-                                        ADD TO CART</button>
+                                        ADD TO CART
+                                    </button>
                                 </div>
                                 <div class="col d-grid">
-                                    <button class="btn btn-clean-yellow btn-block">
+                                    <button class="btn btn-clean-yellow btn-block add-to-cart"
+                                        data-redirect="{{ route('cart.index') }}">
                                         <i class="bi bi-cart3"></i>
-                                        BUY NOW</button>
+                                        BUY NOW
+                                    </button>
                                 </div>
                             </div>
                         @else
