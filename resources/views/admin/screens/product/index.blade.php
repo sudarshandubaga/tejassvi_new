@@ -87,6 +87,10 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="py-5">
+
+                        {{ $products->links() }}
+                    </div>
                 @endif
             </div>
         </div>

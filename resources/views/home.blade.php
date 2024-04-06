@@ -43,6 +43,52 @@
         <div class="container">
             <div class="row align-items-center g-3 text-center">
                 <div class="col-xl-3 col-6">
+                    <div>
+                        <div class="freewship">
+                            <b>WORLDWIDE DELIVERY</b>
+                        </div>
+
+                        <div class="fship">
+                            Fast &amp; Free International Shipping
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-6">
+                    <div class="freewship">
+                        <b>SAFE CHECKOUT</b>
+                    </div>
+
+                    <div class="fship">
+                        100% Secure checkout process.
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-6">
+                    <div>
+                        <div class="freewship">
+                            <b>ASSURED HAPPINESS</b>
+                        </div>
+
+                        <div class="fship">
+                            <div>Weekly giveaway/rewards Programms</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-6">
+                    <div>
+                        <div class="freewship">
+                            <b>GIFT WRAPPING</b>
+                        </div>
+
+                        <div class="fship">
+                            <div>Perfectly wrapped gift for Loved one</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="row align-items-center g-3 text-center">
+                <div class="col-xl-3 col-6">
                     <div class="row  align-items-center">
                         <div class="col-sm-4">
                             <img src="{{ asset('images/worlwide-delivery.webp') }}">
@@ -113,7 +159,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
 

@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="row">
-                <div class="col-md-3 xs-12 filter-options">
+                {{-- <div class="col-md-3 xs-12 filter-options">
                     <div class="filterBy">
                         <div class="mb-2">
                             <span style="font-size: 20px;">Filter By</span>
@@ -129,11 +129,11 @@
                             </label>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-9">
+                </div> --}}
+                <div class="col-md-12">
                     <div class="row g-3">
                         @foreach ($products as $product)
-                            <div class="col-sm-4 col-6">
+                            <div class="col-lg-3 col-sm-4 col-6">
                                 <x-product-box :product="$product" />
                             </div>
                         @endforeach
