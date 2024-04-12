@@ -224,7 +224,7 @@
                 <div class="col-lg-7">
                     <div class="row g-3">
                         @foreach ($products as $product)
-                            <div class="col-sm-4 col-6">
+                            <div class="col-sm-4 col-lg-3 col-6">
                                 <x-product-box :product="$product" />
                             </div>
                         @endforeach

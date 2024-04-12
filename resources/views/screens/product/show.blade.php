@@ -84,11 +84,13 @@
                             </div>
                             <hr>
                             <div class="d-flex gap-3 align-items-center mb-3">
-                                <del class="text-gray" style="font-size: 18px;">
-                                    ₹
-                                    {{ number_format($product->prices[0]->price) }}
-                                </del>
-                                <span style="font-size: 28px;">
+                                @if ($product->prices[0]->price > $product->prices[0]->trade_price)
+                                    <del class="text-danger" style="font-size: 18px;">
+                                        ₹
+                                        {{ number_format($product->prices[0]->price) }}
+                                    </del> 
+                                @endif
+                                <span style="font-size: 28px;" class="text-success">
                                     ₹
                                     {{ number_format($product->prices[0]->trade_price) }}
                                 </span>
@@ -133,16 +135,22 @@
                                 <table class="table table-striped table-bordered">
                                     <tbody>
                                         <tr>
-                                            <th width="30%">Style</th>
-                                            <td>Contemporary</td>
+                                            <th width="30%">Dimenstions</th>
+                                            <td>L16 x W12 x D12 inches</td>
                                         </tr>
                                         <tr>
-                                            <th width="30%">Suitable Room</th>
-                                            <td>Living Room</td>
+                                            <th width="30%">SKU</th>
+                                            <td></td>
                                         </tr>
                                         <tr>
-                                            <th width="30%">Ara Natural finish</th>
-                                            <td>Natural finish</td>
+                                            <th width="30%">Assembly Requires</th>
+                                            <td>NO</td>
+                                        </tr>
+                                        <tr>
+                                            <th width="30%">
+                                                Product Type
+                                            </th>
+                                            <td>{{ $product?->category?->name }}</td>
                                         </tr>
                                         <tr>
                                             <th>Primary Material</th>
@@ -175,8 +183,7 @@
                                 </table>
                             </div>
                             <div class="text-center">
-                                <img src="https://www.omyfurniture.com/assets/images/ready-to-ship.png" alt="Stock Status"
-                                    style="max-width: 100%;">
+                                <img src="{{ asset('images/ready-to-ship.webp') }}" alt="Stock Status" class="w-100">
                             </div> <input type="hidden" name="primary_color" id="primary_color" value="">
                             <input type="hidden" name="secondary_color" id="secondary_color" value="">
                             <script type="text/javascript">

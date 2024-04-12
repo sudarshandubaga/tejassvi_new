@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Color;
+use App\Models\Hsn;
 use App\Models\Product;
 use App\Models\ProductAttribute;
 use Illuminate\Http\Request;
@@ -47,8 +49,10 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $hsns = Hsn::orderBy('code')->pluck('code', 'id');
+        $colors = Color::orderBy('name')->pluck('name', 'id');
         $categories = Category::whereNull('category_id')->get();
-        return view('admin.screens.product.create', compact('categories'));
+        return view('admin.screens.product.create', compact('categories', 'hsns', 'colors'));
     }
 
     /**
@@ -60,6 +64,14 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->slug = $request->slug ?? $this->genSlug($request->name);
         $product->category_id = $request->category_id;
+        $product->code = $request->code;
+        $product->color_id = $request->color_id;
+        $product->hsn_id = $request->hsn_id;
+        $product->sku = $request->sku;
+        $product->dimenstions = $request->dimenstions;
+        $product->is_assembly = $request->is_assembly;
+        $product->material = $request->material;
+        $product->attributes = $request->attributes;
         $product->description = $request->description;
         if (!empty($request->image)) {
             $product->image = dataUriToImage($request->image, "products");
@@ -94,8 +106,10 @@ class ProductController extends Controller
         $request->replace($product->toArray());
         $request->flash();
 
+        $hsns = Hsn::orderBy('code')->pluck('code', 'id');
+        $colors = Color::orderBy('name')->pluck('name', 'id');
         $categories = Category::whereNull('category_id')->get();
-        return view('admin.screens.product.edit', compact('categories', 'product'));
+        return view('admin.screens.product.edit', compact('categories', 'product', 'hsns', 'colors'));
     }
 
     /**
@@ -106,6 +120,14 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->slug = $request->slug ?? $this->genSlug($request->name);
         $product->category_id = $request->category_id;
+        $product->code = $request->code;
+        $product->color_id = $request->color_id;
+        $product->hsn_id = $request->hsn_id;
+        $product->sku = $request->sku;
+        $product->dimenstions = $request->dimenstions;
+        $product->is_assembly = $request->is_assembly;
+        $product->material = $request->material;
+        $product->attributes = $request->attributes;
         $product->description = $request->description;
 
         if (!empty($request->image)) {

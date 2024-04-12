@@ -50,6 +50,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
             Route::resources([
                 'category' => 'CategoryController',
                 'product' => 'ProductController',
+                'hsn' => 'HsnController',
+                'color' => 'ColorController',
+                'product' => 'ProductController',
                 'product-attribute' => 'ProductAttributeController',
                 'product-image' => 'ProductImageController',
             ]);
@@ -61,10 +64,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
         Route::get('/', 'HomeController@index')->name('home');
 
-        // Route::get('product/{category}/{subcategory1?}/{subcategory2?}', 'ProductController@index')->name('product.index');
         Route::get('details/{product}', 'ProductController@show')->name('product.show');
         Route::get('cart', 'CartController@index')->name('cart.index');
 
+        Route::get('{any}', 'PageController@show')->name('page.show');
         Route::get('{category}/{subcategory1?}/{subcategory2?}', 'ProductController@index')->name('product.index');
     });
 });

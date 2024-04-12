@@ -4,10 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+
+    protected $casts = [
+        'attributes' => 'array'
+    ];
 
     public function getRouteKeyName()
     {
@@ -49,17 +54,17 @@ class Product extends Model
     public function getCategoryNameAttribute()
     {
         $categoryName = '';
-        if (!empty($this->category->parent->parent)) {
-            $categoryName .= $this->category->parent->parent->name . ' / ';
+        if (!empty($this->category?->parent?->parent)) {
+            $categoryName .= $this->category?->parent?->parent?->name . ' / ';
         }
-        if (!empty($this->category->parent)) {
-            $categoryName .= $this->category->parent->name . ' / ';
+        if (!empty($this->category?->parent)) {
+            $categoryName .= $this->category?->parent?->name . ' / ';
         }
-        $categoryName .= $this->category->name;
+        $categoryName .= $this->category?->name ?: 'Uncategorized';
         return $categoryName;
     }
 
-    protected function makeLink($label, $link)
+    protected function makeLink($label, $link = '#')
     {
         return '<li class="breadcrumb-item"><a href="' . $link . '" title="' . $label . '">' . $label . '</a></li>';
     }
@@ -67,21 +72,21 @@ class Product extends Model
     public function getBreadcrumbsAttribute()
     {
         $breadcrumbs = $this->makeLink("<i class='bi bi-house-door'></i> Home", route('home'));
-        if (!empty($this->category->parent->parent)) {
+        if (!empty($this->category?->parent?->parent)) {
             $breadcrumbs .= $this->makeLink(
-                $this->category->parent->parent->name,
-                $this->category->parent->parent->link,
+                $this->category?->parent?->parent?->name,
+                $this->category?->parent?->parent?->link,
             );
         }
-        if (!empty($this->category->parent)) {
+        if (!empty($this->category?->parent)) {
             $breadcrumbs .= $this->makeLink(
-                $this->category->parent->name,
-                $this->category->parent->link
+                $this->category?->parent?->name,
+                $this->category?->parent?->link
             );
         }
         $breadcrumbs .= $this->makeLink(
-            $this->category->name,
-            $this->category->link
+            $this->category?->name ?: 'Uncategorized',
+            $this->category?->link
         );
 
         $breadcrumbs .= '<li class="breadcrumb-item active" aria-current="page">' . $this->name . '</li>';

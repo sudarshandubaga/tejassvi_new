@@ -3,11 +3,11 @@
 @section('content')
     <section>
         <div class="container">
-            <div class="d-lg-none d-grid mb-3 text-center">
+            {{-- <div class="d-lg-none d-grid mb-3 text-center">
                 <button type="button" class="btn btn-outline-dark filter-btn d-flex gap-2">
                     <i class="bi bi-filter"></i> Filter & Sort By
                 </button>
-            </div>
+            </div> --}}
             <div class="row">
                 {{-- <div class="col-md-3 xs-12 filter-options">
                     <div class="filterBy">

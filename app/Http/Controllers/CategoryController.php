@@ -50,6 +50,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
+        request()->flush();
+
         $parents = Category::orderBy('name')->pluck('name', 'id');
         return view('admin.screens.category.create', compact('parents'));
     }
@@ -59,7 +61,6 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        request()->flush();
 
         $category = new Category();
         $category->name = $request->name;
@@ -107,6 +108,9 @@ class CategoryController extends Controller
         $category->category_id = $request->category_id;
         $category->description = $request->description;
         if (!empty($request->image)) {
+            if ($category->image) {
+                unlink(public_path() . "/storage/" . $category->getRawOriginal('image'));
+            }
             $category->image = dataUriToImage($request->image, "categories");
         }
         $category->seo_title = $request->seo_title;

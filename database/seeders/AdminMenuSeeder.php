@@ -52,6 +52,18 @@ class AdminMenuSeeder extends Seeder
         ], true);
 
         $this->addRow([
+            'label' => 'HSN/SAC',
+            'icon'  => 'bx bxs-folder',
+            'route_name' => 'admin.hsn.index'
+        ]);
+
+        $this->addRow([
+            'label' => 'Colors',
+            'icon'  => 'bx bxs-folder',
+            'route_name' => 'admin.color.index'
+        ]);
+
+        $this->addRow([
             'label' => 'Product',
             'icon'  => 'bx bxs-folder',
         ]);
@@ -64,6 +76,14 @@ class AdminMenuSeeder extends Seeder
         $this->addRow([
             'label' => 'View Products',
             'route_name' => 'admin.product.index',
+        ], true);
+
+        $this->addRow([
+            'label' => 'Trash',
+            'route_name' => 'admin.product.index',
+            'params' => [
+                'type' => 'trash'
+            ]
         ], true);
 
         AdminMenu::insert($this->data);
