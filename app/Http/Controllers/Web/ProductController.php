@@ -62,7 +62,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        $similarProducts = Product::where('category_id', $product->category_id)
+        $similarProducts = Product::has('prices')->where('category_id', $product->category_id)
             ->whereNot('id', $product->id)
             ->skip(0)->take(15)->get();
 

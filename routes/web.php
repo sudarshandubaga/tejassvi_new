@@ -48,13 +48,16 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
             // Route::delete('product/price/{price}', 'ProductController@destroyPrice')->name('product-price.destroy');
 
             Route::resources([
-                'category' => 'CategoryController',
-                'product' => 'ProductController',
-                'hsn' => 'HsnController',
-                'color' => 'ColorController',
-                'product' => 'ProductController',
+                'category'          => 'CategoryController',
+                'product'           => 'ProductController',
+                'hsn'               => 'HsnController',
+                'color'             => 'ColorController',
+                'product'           => 'ProductController',
                 'product-attribute' => 'ProductAttributeController',
-                'product-image' => 'ProductImageController',
+                'product-image'     => 'ProductImageController',
+                'ware-house'        => 'WareHouseController',
+                'stock'             => 'StockController',
+                'slider'             => 'SliderController'
             ]);
         });
     });

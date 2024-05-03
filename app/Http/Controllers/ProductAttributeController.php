@@ -38,6 +38,7 @@ class ProductAttributeController extends Controller
         $productAttribute->price_usd = $request->price_usd;
         $productAttribute->discount_usd = $request->discount_usd;
         $productAttribute->trade_price_usd = $request->trade_price_usd;
+        $productAttribute->stock = $request->stock;
         $productAttribute->save();
 
         return redirect()->back()->with('success', 'Product price added.');
@@ -80,6 +81,7 @@ class ProductAttributeController extends Controller
         $productAttribute->price_usd = $request->price_usd;
         $productAttribute->discount_usd = $request->discount_usd;
         $productAttribute->trade_price_usd = $request->trade_price_usd;
+        $productAttribute->stock = $request->stock;
         $productAttribute->save();
 
         return redirect(route('admin.product.price', $product))->with('success', 'Product price updated.');

@@ -69,6 +69,19 @@ class Product extends Model
         return '<li class="breadcrumb-item"><a href="' . $link . '" title="' . $label . '">' . $label . '</a></li>';
     }
 
+    public function getColorsAttribute()
+    {
+        $colorIds = $this->color_ids ? explode(",", $this->color_ids) : [];
+
+        $colorArr = [];
+        foreach ($colorIds as $cId) {
+            $color = Color::find($cId);
+            $colorArr[$cId] = $color->name;
+        }
+
+        return $colorArr;
+    }
+
     public function getBreadcrumbsAttribute()
     {
         $breadcrumbs = $this->makeLink("<i class='bi bi-house-door'></i> Home", route('home'));

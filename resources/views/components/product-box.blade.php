@@ -8,10 +8,10 @@
             {{ $product->name }}
         </h5>
         <div class="d-flex flex-column flex-lg-row align-items-center">
-            <del class="text-secondary">
+            <del class="text-danger">
                 <span class="currency">₹</span> {{ number_format($product->prices[0]->price) }}
             </del>
-            <div class="ms-2 fs-4">
+            <div class="ms-2 fs-4 text-success">
                 <span class="currency">₹</span> {{ number_format($product->prices[0]->trade_price) }}
             </div>
         </div>

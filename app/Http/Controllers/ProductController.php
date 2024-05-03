@@ -65,7 +65,7 @@ class ProductController extends Controller
         $product->slug = $request->slug ?? $this->genSlug($request->name);
         $product->category_id = $request->category_id;
         $product->code = $request->code;
-        $product->color_id = $request->color_id;
+        // $product->color_id = $request->color_id;
         $product->hsn_id = $request->hsn_id;
         $product->sku = $request->sku;
         $product->dimenstions = $request->dimenstions;
@@ -73,6 +73,10 @@ class ProductController extends Controller
         $product->material = $request->material;
         $product->attributes = $request->attributes;
         $product->description = $request->description;
+
+        if (!empty($request->color_ids))
+            $product->color_ids = implode(",", $request->color_ids);
+
         if (!empty($request->image)) {
             $product->image = dataUriToImage($request->image, "products");
         }
@@ -103,7 +107,9 @@ class ProductController extends Controller
      */
     public function edit(Request $request, Product $product)
     {
-        $request->replace($product->toArray());
+        $reqData = $product->toArray();
+        $reqData['color_ids'] = explode(",", $product->color_ids);
+        $request->replace($reqData);
         $request->flash();
 
         $hsns = Hsn::orderBy('code')->pluck('code', 'id');
@@ -121,7 +127,7 @@ class ProductController extends Controller
         $product->slug = $request->slug ?? $this->genSlug($request->name);
         $product->category_id = $request->category_id;
         $product->code = $request->code;
-        $product->color_id = $request->color_id;
+        // $product->color_id = $request->color_id;
         $product->hsn_id = $request->hsn_id;
         $product->sku = $request->sku;
         $product->dimenstions = $request->dimenstions;
@@ -129,6 +135,8 @@ class ProductController extends Controller
         $product->material = $request->material;
         $product->attributes = $request->attributes;
         $product->description = $request->description;
+
+        $product->color_ids = !empty($request->color_ids) ? implode(",", $request->color_ids) : null;
 
         if (!empty($request->image)) {
             if (!empty($product->image)) {

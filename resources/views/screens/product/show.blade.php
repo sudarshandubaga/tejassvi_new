@@ -71,45 +71,52 @@
                         @if (!empty($product->prices))
                             <hr>
                             <div class="row align-items-center gap-3 size-group">
-                                <div class="col-2 col-lg-1">
+                                <div class="col-3 col-lg-1">
                                     Size:
                                 </div>
-                                <div class="col-5">
+                                <div class="col-8 col-lg-4">
                                     <select name="size_id" id="size_id" class="form-select">
                                         @foreach ($product->prices as $key => $price)
                                             <option value="{{ $price->size }}">{{ $price->size }}</option>
                                         @endforeach
                                     </select>
                                 </div>
+
+                                @if (!empty($product->colors))
+                                    <div class="col-3 col-lg-1">
+                                        Color:
+                                    </div>
+                                    <div class="col-8 col-lg-4">
+                                        {{ Form::select('color_id', $product->colors, array_keys($product->colors)[0], ['class' => 'form-select']) }}
+                                    </div>
+                                @endif
                             </div>
                             <hr>
                             <div class="d-flex gap-3 align-items-center mb-3">
                                 @if ($product->prices[0]->price > $product->prices[0]->trade_price)
                                     <del class="text-danger" style="font-size: 18px;">
-                                        ₹
-                                        {{ number_format($product->prices[0]->price) }}
-                                    </del> 
+                                        ₹ {{ number_format($product->prices[0]->price) }}
+                                    </del>
                                 @endif
                                 <span style="font-size: 28px;" class="text-success">
-                                    ₹
-                                    {{ number_format($product->prices[0]->trade_price) }}
+                                    ₹ {{ number_format($product->prices[0]->trade_price) }}
                                 </span>
                             </div>
                             <hr>
-                            <div class="row mt-5">
-                                <div class="col">
+                            <div class="row g-3 mt-5">
+                                <div class="col-6 col-sm">
                                     <div class="d-flex gap-2 align-items-center">
                                         <label for="">Qty:</label>
                                         <input type="number" class="form-control form-control-lg" value="1">
                                     </div>
                                 </div>
-                                <div class="col d-grid">
+                                <div class="col-6 col-sm d-grid">
                                     <button class="btn btn-clean-dark btn-block add-to-cart">
                                         <i class="bi bi-cart-plus"></i>
                                         ADD TO CART
                                     </button>
                                 </div>
-                                <div class="col d-grid">
+                                <div class="col-sm d-grid">
                                     <button class="btn btn-clean-yellow btn-block add-to-cart"
                                         data-redirect="{{ route('cart.index') }}">
                                         <i class="bi bi-cart3"></i>
@@ -136,15 +143,15 @@
                                     <tbody>
                                         <tr>
                                             <th width="30%">Dimenstions</th>
-                                            <td>L16 x W12 x D12 inches</td>
+                                            <td>{{ $product->dimenstions ?: '-' }}</td>
                                         </tr>
                                         <tr>
                                             <th width="30%">SKU</th>
-                                            <td></td>
+                                            <td>{{ $product->sku ?: '-' }}</td>
                                         </tr>
                                         <tr>
-                                            <th width="30%">Assembly Requires</th>
-                                            <td>NO</td>
+                                            <th width="30%">Assembly</th>
+                                            <td>{{ $product->is_assembly ?: '-' }}</td>
                                         </tr>
                                         <tr>
                                             <th width="30%">
@@ -154,7 +161,7 @@
                                         </tr>
                                         <tr>
                                             <th>Primary Material</th>
-                                            <td>Camel Bone</td>
+                                            <td>{{ $product->material ?: '-' }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -170,13 +177,31 @@
                                 <table class="table table-striped table-bordered" style="margin-bottom: 5px">
                                     <tbody>
                                         <tr>
-                                            <th>Code</th>
-                                            <td>TEJASSVI10</td>
+                                            <th style="width: 200px;">Code</th>
+                                            <td>{{ $product->code ?: 'N/A' }}</td>
                                         </tr>
                                         <tr>
                                             <th>Availability</th>
                                             <td>
-                                                <span><i class="fa fa-check-square-o"></i> In stock</span>
+                                                <span>
+                                                    In stock
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Brand</th>
+                                            <td>
+                                                <span>
+                                                    {{ $site->title }}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Country of Origin</th>
+                                            <td>
+                                                <span>
+                                                    India
+                                                </span>
                                             </td>
                                         </tr>
                                     </tbody>

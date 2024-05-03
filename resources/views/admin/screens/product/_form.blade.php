@@ -26,11 +26,11 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-6 mb-3">
+            {{-- <div class="col-sm-6 mb-3">
                 {{ Form::label('color_id', null, ['class' => 'form-label']) }}
                 {{ Form::select('color_id', $colors, null, ['class' => 'form-control', 'placeholder' => 'Select Color', 'required']) }}
-            </div>
-            <div class="col-sm-6 mb-3">
+            </div> --}}
+            <div class="col-sm-12 mb-3">
                 {{ Form::label('hsn_id', null, ['class' => 'form-label']) }}
                 {{ Form::select('hsn_id', $hsns, null, ['class' => 'form-control', 'placeholder' => 'Select HSN/SAC', 'required']) }}
             </div>
@@ -38,7 +38,7 @@
 
         <div class="mb-3">
             {{ Form::label('description', null, ['class' => 'form-label']) }}
-            {{ Form::textarea('description', null, ['class' => 'form-control', 'placeholder' => 'Enter Description Here', 'rows' => 5]) }}
+            {{ Form::textarea('description', null, ['class' => 'form-control editor', 'placeholder' => 'Enter Description Here', 'rows' => 5]) }}
         </div>
 
         <h5 class="card-title">Extra Attributes</h5>
@@ -77,8 +77,9 @@
                 {{ Form::select(
                     'is_assembly',
                     [
-                        'Yes' => 'Yes',
-                        'No' => 'No',
+                        'Assembly Required' => 'Assembly Required',
+                        'No Assembly Required' => 'No Assembly Required',
+                        'Partial Assembly Required' => 'Partial Assembly Required',
                     ],
                     null,
                     ['class' => 'form-control', 'placeholder' => 'Select Option'],
@@ -115,7 +116,19 @@
         </div>
         <hr>
         <div class="mb-3">
-            <h4>Categories</h4>
+            <h5>Colors</h5>
+            @foreach ($colors as $colorId => $colorName)
+                <div class="form-check">
+                    {{ Form::checkbox('color_ids[]', $colorId, null, ['class' => 'form-check-input', 'id' => 'color_id' . $colorId]) }}
+                    <label class="form-check-label" for="color_{{ $colorId }}">
+                        {{ $colorName }}
+                    </label>
+                </div>
+            @endforeach
+        </div>
+        <hr>
+        <div class="mb-3">
+            <h5>Categories</h5>
             @foreach ($categories as $category)
                 <x-category-radio :category="$category" :isActive="!empty($product) &&
                     ($category->id == @$product->category_id ||

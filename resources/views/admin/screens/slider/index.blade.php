@@ -27,10 +27,44 @@
                 <div class="card">
                     <h5 class="card-header">View Sliders</h5>
                     <div class="card-body">
-                        {{ $dataTable->table() }}
-                        <!-- <a href="" class="button" data-id="1">Delete</a> -->
-
-                        <!-- <button onclick="showMsg()">Delete</button> -->
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>S. No.</th>
+                                        <th>Title</th>
+                                        <th>Image</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($sliders as $key => $slider)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
+                                            <td>{{ $slider->title }}</td>
+                                            <td>
+                                                @if ($slider->image)
+                                                    <img src="{{ $slider->image }}" alt="{{ $slider->title }}"
+                                                        class="img img-thumbnail">
+                                                @else
+                                                    Not Uploaded
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('admin.slider.edit', $slider) }}" title="Edit"
+                                                    class="btn btn-link">
+                                                    <i class="bx bxs-pencil"></i>
+                                                </a>
+                                                <button type="button" class="btn btn-link text-danger btn-delete"
+                                                    data-href="{{ route('admin.slider.destroy', [$slider]) }}">
+                                                    <i class="bx bx-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -38,23 +72,3 @@
     </div>
     <!-- / Content -->
 @endsection
-
-@push('extra_styles')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.3/css/buttons.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/colreorder/1.6.1/css/colReorder.bootstrap5.min.css">
-@endpush
-
-@push('extra_scripts')
-    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
-
-    <script src="https://cdn.datatables.net/buttons/2.3.3/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.bootstrap5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.colVis.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.print.min.js"></script>
-    <script src="https://cdn.datatables.net/colreorder/1.6.1/js/dataTables.colReorder.min.js"></script>
-
-    {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
-@endpush

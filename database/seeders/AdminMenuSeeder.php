@@ -29,6 +29,12 @@ class AdminMenuSeeder extends Seeder
         ]);
 
         $this->addRow([
+            'label' => 'Slider',
+            'icon'  => 'bx bxs-folder',
+            'route_name' => 'admin.slider.index',
+        ]);
+
+        $this->addRow([
             'label' => 'Category',
             'icon'  => 'bx bxs-folder',
         ]);
@@ -85,6 +91,32 @@ class AdminMenuSeeder extends Seeder
                 'type' => 'trash'
             ]
         ], true);
+
+        // Stock Menu
+        // $this->addRow([
+        //     'label' => 'Stock',
+        //     'icon'  => 'bx bxs-folder',
+        // ]);
+
+        // $this->addRow([
+        //     'label' => 'Warehouse',
+        //     'route_name' => 'admin.ware-house.index',
+        // ], true);
+
+        // $this->addRow([
+        //     'label' => 'Add New Stock',
+        //     'route_name' => 'admin.stock.create',
+        // ], true);
+
+        // $this->addRow([
+        //     'label' => 'Transfer Stock',
+        //     'route_name' => null // 'admin.stock.transfer',
+        // ], true);
+
+        // $this->addRow([
+        //     'label' => 'View Stocks',
+        //     'route_name' => 'admin.stock.index',
+        // ], true);
 
         AdminMenu::insert($this->data);
     }

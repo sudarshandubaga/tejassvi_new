@@ -12,7 +12,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        //
+        $sliders = Slider::latest()->get();
+        return view('admin.screens.slider.index', compact('sliders'));
     }
 
     /**
@@ -28,7 +29,19 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'image' => 'required'
+        ]);
+
+        $slider = new Slider();
+        $slider->title = $request->title;
+        if (!empty($request->image)) {
+            $slider->image = dataUriToImage($request->image, "sliders");
+        }
+        $slider->save();
+
+        return redirect()->back()->with('success', 'Success! Slider image added.');
     }
 
     /**
@@ -44,7 +57,10 @@ class SliderController extends Controller
      */
     public function edit(Slider $slider)
     {
-        //
+        request()->replace($slider->toArray());
+        request()->flash();
+
+        return view('admin.screens.slider.edit', compact('slider'));
     }
 
     /**
@@ -52,7 +68,20 @@ class SliderController extends Controller
      */
     public function update(Request $request, Slider $slider)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+        ]);
+
+        $slider->title = $request->title;
+        if (!empty($request->image)) {
+            if ($slider->image) {
+                unlink(public_path() . "/storage/" . $slider->getRawOriginal('image'));
+            }
+            $slider->image = dataUriToImage($request->image, "sliders");
+        }
+        $slider->save();
+
+        return redirect(route('admin.slider.index'))->with('success', 'Success! Slider image added.');
     }
 
     /**
@@ -60,6 +89,11 @@ class SliderController extends Controller
      */
     public function destroy(Slider $slider)
     {
-        //
+        if ($slider->image) {
+            unlink(public_path() . "/storage/" . $slider->getRawOriginal('image'));
+        }
+        $slider->delete();
+
+        return redirect()->back()->with('success', 'Success! A data has been deleted.');
     }
 }

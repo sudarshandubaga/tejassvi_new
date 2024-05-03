@@ -27,6 +27,12 @@ class CategoryController extends Controller
         return $slug;
     }
 
+    public function subcategory()
+    {
+        $categories = Category::where('category_id', request()->id)->orderBy('name')->pluck('name', 'id');
+        return response()->json($categories);
+    }
+
     /**
      * Display a listing of the resource.
      */

@@ -215,14 +215,14 @@
                 aspernatur animi.</p>
 
             <div class="row g-3">
-                <div class="col-lg-5">
+                <div class="col-lg-4">
                     <div class="h-100">
                         <img src="{{ asset('images/product/1/GALL_2.jpg') }}" alt=""
                             class="w-100 h-100 object-fit-cover">
                     </div>
                 </div>
-                <div class="col-lg-7">
-                    <div class="row g-3">
+                <div class="col-lg-8">
+                    <div class="row g-2">
                         @foreach ($products as $product)
                             <div class="col-sm-4 col-lg-3 col-6">
                                 <x-product-box :product="$product" />

@@ -55,6 +55,10 @@
                                 {{ Form::number('trade_price_usd', null, ['class' => 'form-control trade_price', 'placeholder' => 'Enter trade_price', 'required' => 'required', 'readonly' => 'readonly']) }}
                             </div>
                         </div>
+                        <div class="mb-3">
+                            {{ Form::label('stock', null, ['class' => 'form-label']) }}
+                            {{ Form::number('stock', 0, ['class' => 'form-control', 'min' => 0]) }}
+                        </div>
                         <div class="d-grid">
                             <button class="btn btn-primary">Save</button>
                         </div>
@@ -68,6 +72,10 @@
                                 <div class="flex-grow-1">
                                     <div>
                                         <strong>{{ $price->size }}</strong>
+
+                                        <span class="{{ $price->stock > 0 ? 'text-success' : 'text-danger' }}">
+                                            ({{ $price->stock > 0 ? 'In' : 'Out of' }} Stock: {{ $price->stock }})
+                                        </span>
                                     </div>
                                     <div class="d-flex gap-3">
                                         <div>
